@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Formular";
+    ViewBag.LinkHome = "nav-link";
+    ViewBag.LinkFormular = "nav-link active";
+    Layout = "~/Views/Shared/Template.cshtml";
+}
+
+<h2>Kontaktformular</h2>
+
+<form action="/Home/Formular" method="POST">
+    <fieldset>
+        <div class="form-group">
+            <label for="name">Name: *</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="@ViewBag.name">
+            <small id="infoName" class="form-text text-muted">@ViewBag.errorName</small>
+        </div><br />
+        <div class="form-group">
+            <label for="vorname">Vorname: *</label>
+            <input type="text" class="form-control" id="vorname" placeholder="Vorname" name="vorname" value="@ViewBag.vorname">
+            <small id="infoVorname" class="form-text text-muted">@ViewBag.errorVorname</small>
+        </div><br />
+        <div class="form-group">
+            <label for="email">Email: *</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="@ViewBag.email">
+            <small id="infoEmail" class="form-text text-muted">@ViewBag.errorEmail</small>
+        </div><br />
+        <div class="form-group">
+            <label for="betreff">Betreff: *</label>
+            <input type="text" class="form-control" id="betreff" placeholder="Betreff" name="betreff" value="@ViewBag.betreff">
+            <small id="infoVorname" class="form-text text-muted">@ViewBag.errorBetreff</small>
+        </div><br />
+        <div class="form-group">
+            <label for="meldung">Ihre Meldung: *</label>
+            <textarea class="form-control" id=" meldung" rows="5" name="meldung">@ViewBag.meldung</textarea>
+            <small id="infoPflicht" class="form-text text-muted">@ViewBag.errorMeldung</small>
+        </div>
+        <small id="infoPflicht" class="form-text text-muted">* Pflichtfelder</small>
+        <br />
+        <button type="submit" style="background-color:orangered;border-color:black;" class="btn btn-primary">Absenden</button>
+    </fieldset>
+</form>
